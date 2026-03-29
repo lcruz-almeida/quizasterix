@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz - Astérix e Cleópatra</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4e4bc;
+      text-align: center;
+      padding: 20px;
+    }
 
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background: #ffd700;
+    }
+
+    button:hover {
+      background: #ffcc00;
+    }
+
+    #next-btn {
+      background: #4CAF50;
+      color: white;
+    }
+
+    #restart-btn {
+      background: #2196F3;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-container">
+    <h1>Quiz: Astérix e Cleópatra</h1>
+    <h2 id="question">Pergunta aqui</h2>
+    <div id="answers"></div>
+    <button id="next-btn" onclick="nextQuestion()">Próxima</button>
+    <h3 id="score"></h3>
+    <button id="restart-btn" onclick="restartQuiz()" style="display:none;">Recomeçar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
