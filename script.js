@@ -50,7 +50,7 @@ const quiz = [
     correct: 2
   },
   {
-    question: "Qui sont les auteurs de la BD ?",
+    question: "Qui est l'auteur de la BD Astérix ?",
     answers: ["Hergé", "Goscinny et Uderzo", "Stan Lee", "Tolkien"],
     correct: 1
   }
