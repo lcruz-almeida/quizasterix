@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Quiz - Astérix et Cléopâtre</title>
 
-  <!-- Font style Astérix (approximation) -->
+  <!-- Police style Astérix -->
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
   <style>
@@ -13,17 +13,14 @@
       --asterix-gold: #ffd700;
       --asterix-red: #db281c;
       --asterix-green: #008435;
-      --asterix-black: #1a171e;
       --asterix-parchment: #f8e0b1;
-      --asterix-white: #fffdf7;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
       font-family: Arial, sans-serif;
-      background:
-        radial-gradient(circle at top, #fff6d6 0%, var(--asterix-parchment) 45%, #eed39c 100%);
+      background: radial-gradient(circle, #fff6d6, var(--asterix-parchment));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -32,76 +29,59 @@
     .quiz-container {
       width: 100%;
       max-width: 700px;
-      background: var(--asterix-white);
+      background: white;
       border-radius: 20px;
       padding: 30px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       text-align: center;
     }
 
     h1 {
       font-family: 'Luckiest Guy', cursive;
-      font-size: 2.5rem;
       color: var(--asterix-red);
-      margin-bottom: 10px;
-      letter-spacing: 1px;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
     }
 
     #question {
       font-size: 1.4rem;
-      margin: 20px 0;
+      margin-bottom: 20px;
     }
 
     #answers {
       display: grid;
-      gap: 12px;
+      gap: 10px;
     }
 
     .answer-btn {
       padding: 12px;
-      font-size: 1rem;
-      font-weight: bold;
-      border: none;
       border-radius: 10px;
+      border: none;
       cursor: pointer;
+      font-weight: bold;
       background: var(--asterix-gold);
     }
 
-    .answer-btn.correct {
-      background: var(--asterix-green);
-      color: white;
+    .correct { background: var(--asterix-green); color: white; }
+    .wrong { background: var(--asterix-red); color: white; }
+    .neutral { background: #eee; }
+
+    #feedback {
+      margin-top: 15px;
+      font-weight: bold;
     }
 
-    .answer-btn.wrong {
-      background: var(--asterix-red);
-      color: white;
-    }
-
-    .answer-btn.neutral {
-      background: #eee;
-    }
-
-    #next-btn {
+    #next-btn, #restart-btn {
       margin-top: 15px;
       padding: 10px 20px;
-      background: var(--asterix-green);
-      color: white;
       border: none;
       border-radius: 10px;
       cursor: pointer;
-      display: none;
+      color: white;
     }
 
-    #restart-btn {
-      margin-top: 15px;
-      padding: 10px 20px;
-      background: #2d6cdf;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      display: none;
-    }
+    #next-btn { background: var(--asterix-green); display: none; }
+    #restart-btn { background: #2d6cdf; display: none; }
 
     #score {
       margin-top: 20px;
@@ -123,13 +103,16 @@
 <div class="quiz-container">
   <h1>Astérix & Cléopâtre</h1>
 
+  <div id="progress"></div> <!-- IMPORTANT -->
   <h2 id="question"></h2>
   <div id="answers"></div>
+  <div id="feedback"></div> <!-- IMPORTANT -->
 
   <button id="next-btn" onclick="nextQuestion()">Suivant</button>
   <button id="restart-btn" onclick="restartQuiz()">Recommencer</button>
 
   <h3 id="score"></h3>
+  <div id="final-message"></div> <!-- IMPORTANT -->
 </div>
 
 <script src="script.js"></script>
