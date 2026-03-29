@@ -1,62 +1,57 @@
 const quiz = [
   {
-    question: "Quem é a rainha do Egito nesta história?",
-    answers: ["Nefertiti", "Cleópatra", "Isis", "Hatshepsut"],
+    question: "Qui est la reine d'Égypte dans cette histoire ?",
+    answers: ["Néfertiti", "Cléopâtre", "Isis", "Hatchepsout"],
     correct: 1
   },
   {
-    question: "Quem desafia Cleópatra?",
-    answers: ["Astérix", "Panoramix", "Júlio César", "Obélix"],
+    question: "Qui défie Cléopâtre ?",
+    answers: ["Astérix", "Panoramix", "Jules César", "Obélix"],
     correct: 2
   },
   {
-    question: "Qual é o objetivo da aposta?",
+    question: "Quel est l'objectif du défi ?",
     answers: [
-      "Construir um palácio em 3 meses",
-      "Conquistar Roma",
-      "Criar uma poção mágica",
-      "Viajar até à Gália"
+      "Construire un palais en 3 mois",
+      "Conquérir Rome",
+      "Créer une potion magique",
+      "Voyager en Gaule"
     ],
     correct: 0
   },
   {
-    question: "Quem é o arquiteto escolhido?",
+    question: "Qui est l'architecte choisi ?",
     answers: ["Amonbofis", "Numérobis", "Panoramix", "Obélix"],
     correct: 1
   },
   {
-    question: "Quem ajuda Numérobis?",
-    answers: ["Romanos", "Astérix e Obélix", "Piratas", "Druidas"],
+    question: "Qui aide Numérobis ?",
+    answers: ["Les Romains", "Astérix et Obélix", "Les pirates", "Les druides"],
     correct: 1
   },
   {
-    question: "Quem tenta sabotar o projeto?",
+    question: "Qui tente de saboter le projet ?",
     answers: ["Panoramix", "Amonbofis", "Astérix", "Obélix"],
     correct: 1
   },
   {
-    question: "Qual é a profissão de Panoramix?",
-    answers: ["Soldado", "Druida", "Rei", "Arquiteto"],
+    question: "Quelle est la profession de Panoramix ?",
+    answers: ["Soldat", "Druide", "Roi", "Architecte"],
     correct: 1
   },
   {
-    question: "Que ingrediente especial ajuda na construção?",
-    answers: ["Água do Nilo", "Poção mágica", "Areia dourada", "Mel"],
+    question: "Quel élément aide à construire plus vite ?",
+    answers: ["L'eau du Nil", "La potion magique", "Le sable doré", "Le miel"],
     correct: 1
   },
   {
-    question: "Em que país se passa a história?",
-    answers: ["Grécia", "Roma", "Egito", "Gália"],
+    question: "Dans quel pays se déroule l'histoire ?",
+    answers: ["Grèce", "Rome", "Égypte", "Gaule"],
     correct: 2
   },
   {
-    question: "Quem são os autores da BD?",
-    answers: [
-      "Hergé",
-      "Goscinny e Uderzo",
-      "Stan Lee",
-      "Tolkien"
-    ],
+    question: "Qui sont les auteurs de la BD ?",
+    answers: ["Hergé", "Goscinny et Uderzo", "Stan Lee", "Tolkien"],
     correct: 1
   }
 ];
@@ -98,10 +93,10 @@ function nextQuestion() {
 }
 
 function showScore() {
-  document.getElementById("question").innerText = "Fim do Quiz!";
+  document.getElementById("question").innerText = "Fin du quiz !";
   document.getElementById("answers").innerHTML = "";
   document.getElementById("score").innerText =
-    "Pontuação: " + score + " / " + quiz.length;
+    "Score : " + score + " / " + quiz.length;
 
   document.getElementById("restart-btn").style.display = "block";
   document.getElementById("next-btn").style.display = "none";
